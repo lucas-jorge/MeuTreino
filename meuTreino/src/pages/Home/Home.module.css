@@ -1,0 +1,87 @@
+
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+  } */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.homeMain {
+    padding-top: 40px;
+    margin: 30px;
+}
+
+.homeMain p, h2{
+    margin: 0;
+}
+
+.homeMain h1 {
+    font-size: 20px;
+    padding-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 16px;
+    text-align: start;
+    padding-bottom: 20px;
+}
+
+.userList { 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.userList_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E7E7E7;
+    border: 1px solid #CAEF47;
+    border-radius: 8px;
+    width: 100%;
+    padding: 9px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.userList_item p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.userListAdd {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding-top: 70px;
+}
+
+.userListAdd h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+
+.userListAdd_item { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F6F4F4;
+    border: 1px solid #CAEF47;
+    border-radius: 8px;
+    width: 100%;
+    padding: 9px;
+}
+
+.userListAdd_item p {
+    font-size: 16px;
+    font-weight: 400;
+}
+

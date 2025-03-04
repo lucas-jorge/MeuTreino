@@ -1,0 +1,121 @@
+/* Estilos do CSS Module */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .loginBody {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+  }
+  
+  .container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding-bottom: 100px;
+
+    height: fit-content;
+    margin: 30px;
+  }
+  
+  .logo {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .login h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .login p {
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  
+  .inputIcon {
+    width: 20px;
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  input {
+    border: none;
+    background: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+  }
+  
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .btnLogin {
+    width: calc(100% - 40px);
+    padding: 15px;
+    background-color: #C9F41D;
+    color: #000;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .btnLogin:hover {
+    background-color: #b3dd18;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .logo {
+      font-size: 24px;
+    }
+  
+    .btnLogin {
+      padding: 12px;
+    }
+  }
+  

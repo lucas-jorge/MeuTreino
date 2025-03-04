@@ -1,0 +1,54 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "João",
+      "exercicios": [
+        {
+          "id": "113124",
+          "exercicio": "peito",
+          "serie": 3,
+          "repeticoes": 12,
+          "tempo": 30
+        },
+        {
+          "id": "113125",
+          "exercicio": "costas",
+          "serie": 3,
+          "repeticoes": 12,
+          "tempo": 30
+        },
+        {
+          "id": "113123",
+          "exercicio": "coxa",
+          "serie": 3,
+          "repeticoes": 12,
+          "tempo": 30
+        }
+      ]
+    }
+  ],
+  "exercicios": [
+    {
+      "id": "113123",
+      "exercicio": "coxa",
+      "serie": 3,
+      "repeticoes": 12,
+      "tempo": 30
+    },
+    {
+      "id": "113124",
+      "exercicio": "peito",
+      "serie": 4,
+      "repeticoes": 10,
+      "tempo": 45
+    },
+    {
+      "id": "113125",
+      "exercicio": "costas",
+      "serie": 3,
+      "repeticoes": 15,
+      "tempo": 60
+    }
+  ]
+}
