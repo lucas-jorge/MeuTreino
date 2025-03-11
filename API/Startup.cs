@@ -141,7 +141,12 @@ namespace API
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => { c.SwaggerEndpoint($"/swagger/{SwaggerVersion}/swagger.json", "API"); });
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint($"/swagger/{SwaggerVersion}/swagger.json", "API");
+                c.RoutePrefix = "api"; // Define o prefixo da UI do Swagger como /api
+            });
+
 
             #region Verifica se precisa aplicar alguma atualização no banco de dados. Caso positivo, aplica
             using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
