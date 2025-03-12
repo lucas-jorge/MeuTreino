@@ -183,11 +183,11 @@ MIT License
 
 ## Equipe
 
-Lucas Albuquerque Jorge
-Marco Antonio
-Yara Correa
-Tiago Shimizu
+* Lucas Albuquerque Jorge
+* Marco Antonio
+* Yara Correa
+* Tiago Shimizu
 
-Landing page ->
-Video -> 
+# Landing page ->
+# Video -> 
 
