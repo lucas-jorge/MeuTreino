@@ -188,6 +188,6 @@ MIT License
 * Yara Correa
 * Tiago Shimizu
 
-# Landing page ->
-# Video -> 
+## Landing page -> https://lucas-jorge.github.io/MeuTreino.github.io/
+## Video -> 
 
