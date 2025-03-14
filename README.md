@@ -190,5 +190,8 @@ MIT License
 * Tiago Shimizu
 
 ## Landing page -> https://lucas-jorge.github.io/MeuTreino.github.io/
-## Video -> 
-
+## Video -> https://github.com/lucas-jorge/MeuTreino/blob/main/Video/Video%20de%20apresenta%C3%A7%C3%A3o.mp4
+## Images
+![API](https://github.com/lucas-jorge/MeuTreino/blob/main/Imagens/API.jpg)
+![Login page](https://github.com/lucas-jorge/MeuTreino/blob/main/Imagens/Login.jpg)
+![APP](https://github.com/lucas-jorge/MeuTreino/blob/main/Imagens/Aplicativo.jpg)
