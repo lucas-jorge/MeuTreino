@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using System.Text;
 using API.Entities;
@@ -52,13 +53,16 @@ namespace API
                 case "InMemory":
                     services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("InMemoryDb"));
                     break;
+                case "Sqlite":
+                    string DbPath = System.IO.Path.Join(AppDomain.CurrentDomain.BaseDirectory, "Database.db");
+                    services.AddDbContext<AppDbContext>(options => options.UseSqlite($"Data Source={DbPath}"));
+                    break;
                 case "MySQL":
                     var connectionString = Configuration.GetConnectionString("DefaultConnection");
                     services.AddDbContext<AppDbContext>(options => options.UseMySQL(connectionString));
                     break;
             }
             #endregion
-
             services.AddScoped<AppDbContext, AppDbContext>();
 
             #region Autentication
@@ -151,58 +155,15 @@ namespace API
             #region Verifica se precisa aplicar alguma atualização no banco de dados. Caso positivo, aplica
             using (var scope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
             {
-                var context = scope.ServiceProvider.GetService<AppDbContext>();
+                AppDbContext context = scope.ServiceProvider.GetService<AppDbContext>();
 
                 // Verifica se o contexto é relacional antes de tentar executar migrações
-                if (context.Database.IsMySql())
+                if (context.Database.IsMySql() || context.Database.IsSqlite())
                 {
                     if (context.Database.GetPendingMigrations().Any())
                     {
                         context.Database.Migrate();
                     }
-                }
-                else
-                {
-                    context.TB_USUARIO.Add(new TB_USUARIO()
-                    {
-                        Nome = "Admin",
-                        Senha = "Admin",
-                        Status = TB_USUARIO.EStatus.Ativo
-                    });
-
-                    context.TB_EXERCICIOS.Add(new TB_Exercicios()
-                    {
-                        Exercicio = "Abdome",
-                        Serie = 3,
-                        Repeticoes = 15,
-                        Tempo = 0
-                    });
-
-                    context.TB_EXERCICIOS.Add(new TB_Exercicios()
-                    {
-                        Exercicio = "Quadríceps",
-                        Serie = 0,
-                        Repeticoes = 0,
-                        Tempo = 0
-                    });
-
-                    context.TB_EXERCICIOS.Add(new TB_Exercicios()
-                    {
-                        Exercicio = "Braços",
-                        Serie = 0,
-                        Repeticoes = 0,
-                        Tempo = 0
-                    });
-
-                    context.TB_EXERCICIOS.Add(new TB_Exercicios()
-                    {
-                        Exercicio = "Peito",
-                        Serie = 0,
-                        Repeticoes = 0,
-                        Tempo = 0
-                    });
-
-                    context.SaveChanges();
                 }
             }
             #endregion

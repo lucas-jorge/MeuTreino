@@ -21,7 +21,7 @@ namespace API.Entities
         public int Tempo { get; set; }
         
         [Required]
-        public int UsuarioId { get; set; }
+        public long UsuarioId { get; set; }
         
         [ForeignKey("UsuarioId")]
         public virtual TB_USUARIO Usuario { get; set; }

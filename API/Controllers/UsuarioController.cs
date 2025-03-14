@@ -38,7 +38,7 @@ namespace API.Controllers
             {
                 try
                 {
-                    TB_USUARIO TB_USUARIO = await context.TB_USUARIO.Where(x => x.Nome.Equals(body.GetProperty("nome").GetString()) &&
+                    TB_USUARIO TB_USUARIO = await context.USUARIO.Where(x => x.Nome.Equals(body.GetProperty("nome").GetString()) &&
                                                                                 x.Senha.Equals(body.GetProperty("senha").GetString()))
                                                                     .AsNoTracking()
                                                                     .OrderByDescending(x => x.Id)
@@ -80,7 +80,7 @@ namespace API.Controllers
 
                 if (IdUsuario != null)
                 {
-                    retorno = context.TB_USUARIO.Where(x => x.Id.Equals(IdUsuario))
+                    retorno = context.USUARIO.Where(x => x.Id.Equals(IdUsuario))
                                                 .AsNoTracking()
                                                 .FirstOrDefault();
 
@@ -91,7 +91,7 @@ namespace API.Controllers
                 }
                 else
                 {
-                    return await Task.Run(() => Ok(context.TB_USUARIO
+                    return await Task.Run(() => Ok(context.USUARIO
                                                           .AsNoTracking()
                                                           .ToList()));
                 }
@@ -109,7 +109,7 @@ namespace API.Controllers
             {
                 try
                 {
-                    TB_USUARIO TB_USUARIO = await context.TB_USUARIO.Where(x => x.Id.Equals(body.GetProperty("id").GetInt64()))
+                    TB_USUARIO TB_USUARIO = await context.USUARIO.Where(x => x.Id.Equals(body.GetProperty("id").GetInt64()))
                                                                     .FirstOrDefaultAsync();
 
                     if (TB_USUARIO == null)
@@ -145,7 +145,7 @@ namespace API.Controllers
         [HttpPost("{id}/exercicios")]
         public IActionResult AddExercicios(long id, List<TB_Exercicios> exercicios)
         {
-            var user = context.TB_USUARIO.FirstOrDefault(x => x.Id == id);
+            var user = context.USUARIO.FirstOrDefault(x => x.Id == id);
 
             if (user == null)
             {
@@ -161,7 +161,7 @@ namespace API.Controllers
         [HttpGet("{id}/exercicios")]
         public IActionResult GetExerciciosPorIdUsuario(long id)
         {
-            var user = context.TB_USUARIO.Include(u => u.Exercicios).FirstOrDefault(x => x.Id == id);
+            var user = context.USUARIO.Include(u => u.Exercicios).FirstOrDefault(x => x.Id == id);
 
             if (user == null)
             {
