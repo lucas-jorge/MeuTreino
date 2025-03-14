@@ -23,7 +23,7 @@ namespace API.Controllers
         {
             try
             {
-                TB_Exercicios exercicio = context.TB_EXERCICIOS.Where(x => x.Id.Equals(id))
+                TB_Exercicios exercicio = context.EXERCICIOS.Where(x => x.Id.Equals(id))
                                                            .AsNoTracking()
                                                            .FirstOrDefault();
                 if (exercicio == null)
@@ -42,7 +42,7 @@ namespace API.Controllers
         {
             try
             {
-                return Ok(context.TB_EXERCICIOS.AsNoTracking()
+                return Ok(context.EXERCICIOS.AsNoTracking()
                                                .ToList());
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace API.Controllers
         {
             try
             {
-                context.TB_EXERCICIOS.Add(exercicio);
+                context.EXERCICIOS.Add(exercicio);
                 context.SaveChanges();
                 return CreatedAtAction(nameof(GetById), new { id = exercicio.Id }, exercicio);
             }
@@ -71,13 +71,13 @@ namespace API.Controllers
         {
             try
             {
-                TB_Exercicios exercicio = context.TB_EXERCICIOS.Where(x => x.Id.Equals(id))
+                TB_Exercicios exercicio = context.EXERCICIOS.Where(x => x.Id.Equals(id))
                                                                .AsNoTracking()
                                                                .FirstOrDefault();
                 if (exercicio == null)
                     return NotFound();
 
-                context.TB_EXERCICIOS.Remove(exercicio);
+                context.EXERCICIOS.Remove(exercicio);
                 context.SaveChanges();
                 return Ok();
             }

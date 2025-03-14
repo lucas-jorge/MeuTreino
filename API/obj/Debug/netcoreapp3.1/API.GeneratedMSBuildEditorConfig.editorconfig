@@ -1,3 +1,8 @@
 is_global = true
 build_property.RootNamespace = API
-build_property.ProjectDir = C:\Users\bruco\Documents\MeuTreino\API\
+build_property.ProjectDir = C:\Users\tiago\Desktop\EAD\Fontes\API\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
