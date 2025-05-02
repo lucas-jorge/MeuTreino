@@ -80,7 +80,7 @@ namespace API
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("7f72cd430cb04f3a9e2c03039c03ac09")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Secret").Value)),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
